@@ -6,7 +6,7 @@ import {
 } from 'react-navigation'
 
 import TabBarIcon from '../components/TabBarIcon'
-import NewsScreen from '../screens/NewsScreen'
+import PulseScreen from '../screens/PulseScreen'
 import ClubhouseScreen from '../screens/ClubhouseScreen'
 import SettingsScreen from '../screens/SettingsScreen'
 import IndividualTeam from '../components/IndividualTeam'
@@ -17,28 +17,32 @@ const config = Platform.select({
   default: {}
 })
 
-const NewsStack = createStackNavigator(
+const PulseStack = createStackNavigator(
   {
-    News: NewsScreen
+    Pulse: PulseScreen
   },
   config
 )
 
-NewsStack.navigationOptions = {
-  tabBarLabel: 'News',
+PulseStack.navigationOptions = {
+  tabBarLabel: 'Pulse',
+  tabBarOptions: {
+    showLabel: false,
+    style: {
+      backgroundColor: 'black' // TabBar background
+    }
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        Platform.OS === 'ios' ? `ios-pulse${focused ? '' : ''}` : 'md-pulse'
       }
     />
   )
 }
 
-NewsStack.path = ''
+PulseStack.path = ''
 
 const ClubhouseStack = createStackNavigator(
   {
@@ -51,10 +55,16 @@ const ClubhouseStack = createStackNavigator(
 
 ClubhouseStack.navigationOptions = {
   tabBarLabel: 'Clubhouse',
+  tabBarOptions: {
+    showLabel: false,
+    style: {
+      backgroundColor: 'black' // TabBar background
+    }
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={Platform.OS === 'ios' ? 'ios-trophy' : 'md-trophy'}
     />
   )
 }
@@ -70,6 +80,12 @@ const SettingsStack = createStackNavigator(
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',
+  tabBarOptions: {
+    showLabel: false,
+    style: {
+      backgroundColor: 'black' // TabBar background
+    }
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -81,7 +97,7 @@ SettingsStack.navigationOptions = {
 SettingsStack.path = ''
 
 const tabNavigator = createBottomTabNavigator({
-  NewsStack,
+  PulseStack,
   ClubhouseStack,
   SettingsStack
 })

@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { ExpoLinksView } from '@expo/samples'
 import axios from 'axios'
 
-export default class StandingsScreen extends React.Component {
+export default class ClubhouseScreen extends React.Component {
   state = {
     standings: [],
     pointsLeaders: []
@@ -139,8 +139,8 @@ export default class StandingsScreen extends React.Component {
   }
 }
 
-StandingsScreen.navigationOptions = {
-  title: 'Standings',
+ClubhouseScreen.navigationOptions = {
+  title: 'Clubhouse',
   headerBackTitle: null
 }
 

@@ -3,7 +3,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 
 import MainTabNavigator from './MainTabNavigator'
 import SettingsScreen from '../screens/SettingsScreen'
-import StandingsScreen from '../screens/StandingsScreen'
+import ClubhouseScreen from '../screens/ClubhouseScreen'
 
 export default createAppContainer(
   createSwitchNavigator({
@@ -11,6 +11,6 @@ export default createAppContainer(
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
     Main: MainTabNavigator,
     Settings: SettingsScreen,
-    Standings: StandingsScreen
+    Clubhouse: ClubhouseScreen
   })
 )

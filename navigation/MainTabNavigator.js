@@ -7,7 +7,7 @@ import {
 
 import TabBarIcon from '../components/TabBarIcon'
 import NewsScreen from '../screens/NewsScreen'
-import StandingsScreen from '../screens/StandingsScreen'
+import ClubhouseScreen from '../screens/ClubhouseScreen'
 import SettingsScreen from '../screens/SettingsScreen'
 import IndividualTeam from '../components/IndividualTeam'
 import IndividualPlayer from '../components/IndividualPlayer'
@@ -40,17 +40,17 @@ NewsStack.navigationOptions = {
 
 NewsStack.path = ''
 
-const StandingsStack = createStackNavigator(
+const ClubhouseStack = createStackNavigator(
   {
-    Standings: StandingsScreen,
+    Clubhouse: ClubhouseScreen,
     IndividualTeam: IndividualTeam,
     IndividualPlayer: IndividualPlayer
   },
   config
 )
 
-StandingsStack.navigationOptions = {
-  tabBarLabel: 'Standings',
+ClubhouseStack.navigationOptions = {
+  tabBarLabel: 'Clubhouse',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -59,7 +59,7 @@ StandingsStack.navigationOptions = {
   )
 }
 
-StandingsStack.path = ''
+ClubhouseStack.path = ''
 
 const SettingsStack = createStackNavigator(
   {
@@ -82,7 +82,7 @@ SettingsStack.path = ''
 
 const tabNavigator = createBottomTabNavigator({
   NewsStack,
-  StandingsStack,
+  ClubhouseStack,
   SettingsStack
 })
 

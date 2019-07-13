@@ -26,13 +26,8 @@ export default function HomeScreen(props) {
         }
       />
       <Button
-        title="Go to Standings"
-        onPress={() =>
-          props.navigation.navigate('Standings', {
-            itemId: 86,
-            headerTitle: 'Tyler Swartz'
-          })
-        }
+        title="Go to Clubhouse"
+        onPress={() => props.navigation.navigate('Clubhouse', {})}
       />
     </View>
   )
@@ -42,7 +37,7 @@ HomeScreen.navigationOptions = {
   title: 'News',
   headerBackTitle: null,
   headerStyle: {
-    backgroundColor: '#f4511e'
+    backgroundColor: 'black'
   },
   headerTintColor: '#fff',
   headerTitleStyle: {

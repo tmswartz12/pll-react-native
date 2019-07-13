@@ -8,15 +8,21 @@ export default class SettingsScreen extends React.Component {
    */
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam('headerTitle', 'A Nested Details Screen'),
-      headerBackTitle: null
+      title: navigation.getParam('headerTitle', 'Settings'),
+      headerBackTitle: null,
+      headerStyle: {
+        backgroundColor: 'black'
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold'
+      }
     }
   }
 
   render() {
     const { navigation } = this.props
-    const itemId = navigation.getParam('itemId', 'NO-ID')
-    console.log('iteamId', itemId)
+
     return <ExpoConfigView />
   }
 }

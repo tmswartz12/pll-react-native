@@ -43,7 +43,6 @@ export default class ClubhouseScreen extends React.Component {
                 </View>
               </View>
               {this.state.standings.map(team => {
-                console.log('team', team)
                 const { TeamName, TeamID, Wins, Losses, Ties, ScoreDiff } = team
                 return (
                   <View style={styles.cardRow}>
@@ -52,7 +51,6 @@ export default class ClubhouseScreen extends React.Component {
                         style={styles.name}
                         onPress={() =>
                           this.props.navigation.navigate('IndividualTeam', {
-                            teamId: TeamID,
                             headerTitle: TeamName
                           })
                         }
@@ -141,7 +139,14 @@ export default class ClubhouseScreen extends React.Component {
 
 ClubhouseScreen.navigationOptions = {
   title: 'Clubhouse',
-  headerBackTitle: null
+  headerBackTitle: null,
+  headerStyle: {
+    backgroundColor: 'black'
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold'
+  }
 }
 
 const styles = StyleSheet.create({

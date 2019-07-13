@@ -8,12 +8,11 @@ export default class IndividualPlayer extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.getParam('name', ''),
-      headerBackTitle: navigation.getParam('teamId', '')
+      headerBackTitle: null
     }
   }
   async componentDidMount() {
     const player = this.props.navigation.getParam('player')
-    console.log('player', player)
   }
 
   render() {

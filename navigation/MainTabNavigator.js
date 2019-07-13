@@ -35,9 +35,7 @@ PulseStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios' ? `ios-pulse${focused ? '' : ''}` : 'md-pulse'
-      }
+      name={Platform.OS === 'ios' ? `ios-pulse` : 'md-pulse'}
     />
   )
 }
